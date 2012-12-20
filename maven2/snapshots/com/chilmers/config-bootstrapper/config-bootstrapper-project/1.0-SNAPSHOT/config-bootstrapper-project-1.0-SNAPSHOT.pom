@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<project
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+    xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.chilmers.config-bootstrapper</groupId>
+    <artifactId>config-bootstrapper-project</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>config-bootstrapper-project</name>
+    <url>http://www.github.com/chilmers/config-bootstrapper</url>
+    <packaging>pom</packaging>
+    
+    <modules>
+      <module>config-bootstrapper</module>
+    </modules>
+
+    <build>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <version>2.9</version>
+          <executions>
+            <execution>
+              <id>aggregate-javadoc</id>
+              <phase>package</phase>
+              <configuration>
+                <outputDirectory>${project.basedir}/apidocs</outputDirectory>
+                <reportOutputDirectory>${project.basedir}/apidocs</reportOutputDirectory>
+                <aggregate>true</aggregate>
+              </configuration>
+              <goals>
+                <goal>aggregate</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
+    </build>
+
+</project>
